@@ -1,4 +1,11 @@
-# angular-seed — the seed for AngularJS apps
+# The AngularJS TDD training app
+
+This app is started from angular-seed and retains many of it's properties. The application has a
+master that is a dressed down version of Angular Seed with twitter bootstrap added to it. The
+solution branch has commits towards the different phases, tagged with each of the assignment numbers
+in the training. Your trainer will walk you through it in a classroom training.
+
+## About angular-seed — the seed for AngularJS apps
 
 This project is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app.
 You can use it to quickly bootstrap your angular webapp projects and dev environment for these
@@ -33,21 +40,6 @@ You can pick one of these options:
 
 Then navigate your browser to `http://localhost:<port>/app/index.html` to see the app running in
 your browser.
-
-
-### Running the app in production
-
-This really depends on how complex is your app and the overall infrastructure of your system, but
-the general rule is that all you need in production are all the files under the `app/` directory.
-Everything else should be omitted.
-
-Angular apps are really just a bunch of static html, css and js files that just need to be hosted
-somewhere, where they can be accessed by browsers.
-
-If your Angular app is talking to the backend server via xhr or other means, you need to figure
-out what is the best way to host the static files to comply with the same origin policy if
-applicable. Usually this is done by hosting the files by the backend server or through
-reverse-proxying the backend server(s) and a webserver(s).
 
 
 ### Running unit tests
@@ -101,15 +93,12 @@ fetch the changes and merge them into your project with git.
 
     app/                --> all of the files to be used in production
       css/              --> css files
-        app.css         --> default stylesheet
+        bootstrap.css         --> default stylesheet
       img/              --> image files
       index.html        --> app layout file (the main html template file of the app)
-      index-async.html  --> just like index.html, but loads js files asynchronously
       js/               --> javascript files
         app.js          --> application
         controllers.js  --> application controllers
-        directives.js   --> application directives
-        filters.js      --> custom angular filters
         services.js     --> custom angular services
       lib/              --> angular and 3rd party javascript libraries
         angular/
@@ -119,7 +108,6 @@ fetch the changes and merge them into your project with git.
           version.txt       --> version number
       partials/             --> angular view partials (partial html templates)
         partial1.html
-        partial2.html
 
     config/karma.conf.js        --> config file for running unit tests with Karma
     config/karma-e2e.conf.js    --> config file for running e2e tests with Karma
@@ -142,8 +130,7 @@ fetch the changes and merge them into your project with git.
           version.txt           --> version file
       unit/                     --> unit level specs/tests
         controllersSpec.js      --> specs for controllers
-        directivessSpec.js      --> specs for directives
-        filtersSpec.js          --> specs for filters
+        directivesSpec.js      --> specs for directives
         servicesSpec.js         --> specs for services
 
 ## Contact
