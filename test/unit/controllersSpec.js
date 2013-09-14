@@ -2,15 +2,40 @@
 
 /* jasmine specs for controllers go here */
 
-describe('controllers', function(){
-  beforeEach(module('myApp.controllers'));
+describe('CounterControl', function(){
 
+  var scope, subject, countWordsOf;
 
-  it('should ....', inject(function() {
-    //spec body
-  }));
+  beforeEach(function(){
+    module('myApp.controllers');
 
-  it('should ....', inject(function() {
-    //spec body
-  }));
+    inject(function($rootScope, $controller){
+      scope = $rootScope.$new();
+      subject = $controller('CounterControl', {$scope: scope});
+      countWordsOf = scope.count;
+    });
+  });
+
+  describe('word count', function (){
+
+    it('should count words in "foo bar"', function (){
+      expect(countWordsOf('foo bar')).toBe(2);
+    });
+
+    it('should count words in multiline string', function(){
+      expect(countWordsOf('foo bar\nbaz')).toBe(3);
+    });
+
+    it('should not count whitespace as words', function(){
+      expect(countWordsOf('foo     bar')).toBe(2);
+    });
+
+    it('should not count interpunction as words', function(){
+      expect(countWordsOf('foo - bar !')).toBe(2);
+    });
+
+    it('should deal with empty input', function (){
+      expect(countWordsOf(undefined)).toBe(0);
+    });
+  });
 });
