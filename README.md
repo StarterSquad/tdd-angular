@@ -88,7 +88,6 @@ along with a CI service (in Jenkins) hosted that will run unit and end to end te
 When we upgrade angular-seed's repo with newer angular or testing library code, you can just
 fetch the changes and merge them into your project with git.
 
-
 ## Contact
 
 For more information on AngularJS please check out http://angularjs.org/
