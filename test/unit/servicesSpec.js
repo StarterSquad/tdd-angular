@@ -3,12 +3,34 @@
 /* jasmine specs for services go here */
 
 describe('service', function() {
-  beforeEach(module('myApp.services'));
+  var countWordsOf;
+  beforeEach(function(){
+    module('myApp.services');
+    inject(function(count){
+      countWordsOf = count;
+    });
+  });
 
+  describe('word count', function (){
 
-  describe('version', function() {
-    it('should return current version', inject(function(version) {
-      expect(version).toEqual('0.1');
-    }));
+    it('should count words in "foo bar"', function (){
+      expect(countWordsOf('foo bar')).toBe(2);
+    });
+
+    it('should count words in multiline string', function(){
+      expect(countWordsOf('foo bar\nbaz')).toBe(3);
+    });
+
+    it('should not count whitespace as words', function(){
+      expect(countWordsOf('foo     bar')).toBe(2);
+    });
+
+    it('should not count interpunction as words', function(){
+      expect(countWordsOf('foo - bar !')).toBe(2);
+    });
+
+    it('should deal with empty input', function (){
+      expect(countWordsOf(undefined)).toBe(0);
+    });
   });
 });

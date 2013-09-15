@@ -8,6 +8,7 @@ describe('CounterControl', function(){
 
   beforeEach(function(){
     module('myApp.controllers');
+    module('myApp.services');
 
     inject(function($rootScope, $controller){
       scope = $rootScope.$new();
@@ -16,6 +17,7 @@ describe('CounterControl', function(){
     });
   });
 
+  //This is duplicated in the servicesSpec. Next exercise we'll take care of that.
   describe('word count', function (){
 
     it('should count words in "foo bar"', function (){

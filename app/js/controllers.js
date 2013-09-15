@@ -3,10 +3,8 @@
 /* Controllers */
 
 angular.module('myApp.controllers', []).
-  controller('CounterControl', function($scope) {
+  controller('CounterControl', function($scope, count) {
       angular.extend($scope, {
-        count: function(string) {
-          return string ? string.match(/\w+/g).length : 0;
-        }
+        count: count
       });
   });
