@@ -129,7 +129,7 @@ fetch the changes and merge them into your project with git.
           angular-scenario.js   --> angular's scenario (end-to-end) test runner library
           version.txt           --> version file
       unit/                     --> unit level specs/tests
-        controllersSpec.js      --> specs for controllers
+        CounterControllerSpec.js      --> specs for controllers
         directivesSpec.js      --> specs for directives
         servicesSpec.js         --> specs for services
 
